@@ -6,20 +6,25 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body class="container">
-        <h2>test</h2>
-        <div class="list">
-            
+        <div class="language-container">
+            <div class="language-btn-group">
+                
+            </div>
+            <button class="language-save-btn">Save</button>
         </div>
-        <script id="peopletemplate">
-         <div>
-            <h2> {{name}}</h2>
-            <p> {{job}}</p>
-         </div>
+        <button class="language-select-btn">
+        select
+        </button>
+        <script id="language-template" type="text/x-handlebars-template">
+        {{#each languages}}
+        <div class='btn-language-basic btn-language btn-{{name}}'>
+            {{name}}
+        </div>
+        {{/each}}
         </script>
-
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="../bower_components/underscore/underscore-min.js"></script>
-        <script src="../bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

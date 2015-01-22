@@ -1,10 +1,35 @@
-$(function(){
-    var template = Handlebars.compile($("#peopletemplate").html());
+$(function() {
+    var template = Handlebars.compile($("#language-template").html());
     var data = {
-        name: "Denny",
-        job: "Developer"
+        languages: [{
+            name: "ruby"
+        }, {
+            name: "javascript"
+        }, {
+            name: "python"
+        }, {
+            name: "c++"
+        }]
     };
 
-    $('.list').html(template(data));
+    $('.language-btn-group').html(template(data));
+
+    var lanBtn = $(".btn-language"),
+        selBtn = $(".language-select-btn"),
+        saveBtn = $(".language-save-btn");
+    lanBtn.on("click", function(){
+        $this = $(this);
+        $this.toggleClass("btn-language");
+        $this.toggleClass("btn-language-active");
+    });
+
+    selBtn.on("click", function(){
+        $(".language-container").fadeIn();
+    });
+    saveBtn.on("click", function(){
+       $(".language-container").fadeOut(); 
+    })
+
+
 
 });

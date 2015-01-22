@@ -1,5 +1,89 @@
+// Color variable
+$lan-text-color: #131414;
+$lan-bg-color: #79a0dd;
+
+$fancy-btn-bg-color: rgba(28, 29, 30, 1);
+$fancy-btn-active-bg-color: rgba(109, 110, 111, 1);
+$fancy-btn-hover-bg-color: rgba(57, 58, 60, 1);
+
+$fancy-btn-text-color: rgba(175, 175, 175, 1);
+$fancy-btn-active-text-color: white;
+$fancy-btn-hover-text-color: rgba(121, 160, 221, 1);
+
+$fancy-btn-padding: 12px;
+
+// Mixin
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
 // Basic view
 
-.container{
-    padding: 20% 10%;
+.container {
+    padding: 10% 5%;
+}
+
+.language-container{
+    height: 50vh;
+    width: 50vw;
+    background-color: #ccc;
+    position: fixed;
+    top: 20px;
+    display: none;
+}
+.language-btn-group{
+    padding-top: 2* $fancy-btn-padding;
+    
+    *{
+        margin: $fancy-btn-padding;
+    }
+}
+
+.language-save-btn,.language-select-btn{
+    border-radius: 15%;
+    margin-left: 20%;
+    border: none;
+    cursor: pointer;
+    padding: $fancy-btn-padding;
+    background-color: $lan-bg-color;
+    color: $lan-text-color;
+    &:hover{
+        background-position: lighten($lan-bg-color, 50%);
+    }
+}
+
+.language-save-btn{
+    z-index: 2000;
+    margin-left: 50%;
+    position: absolute;
+    bottom: $fancy-btn-padding;
+}
+// Button component
+
+.btn-language-basic{
+    font-size: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: $fancy-btn-padding;
+}
+
+.btn-language {
+    background-color: $fancy-btn-bg-color;
+    color: $fancy-btn-text-color;
+    &:hover {
+        background-color: $fancy-btn-hover-bg-color;
+        color: $fancy-btn-hover-text-color;
+        @include transition(all, 0.6s, ease-in-out);
+    }
+}
+
+.btn-language-active{
+    background-color: $fancy-btn-active-bg-color;
+    color: $fancy-btn-active-text-color;
 }
