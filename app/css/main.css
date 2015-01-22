@@ -4,7 +4,7 @@
 .language-container {
   height: 50vh;
   width: 50vw;
-  background-color: #ccc;
+  background-color: #303133;
   position: fixed;
   top: 20px;
   display: none; }
@@ -23,7 +23,12 @@
   background-color: #79a0dd;
   color: #131414; }
   .language-save-btn:hover, .language-select-btn:hover {
-    background-position: white; }
+    background-color: #a2bde7;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out; }
 
 .language-save-btn {
   z-index: 2000;
